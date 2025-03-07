@@ -20,14 +20,26 @@ namespace Sergioteacher.Csharp07.ScrollColorDinamico
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Se inicializa los componentes y se da unos valores por defecto
+        /// para que no sea brusco el cambio al mover el scroll
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             SR.Value = 37;
             SG.Value = 200;
-            SB.Value = 100;
+            SB.Value = 120;
         }
 
+        /// <summary>
+        /// Como el nombre indica explícitamente
+        /// el tipo de evento "ValueChanged" como lo soportan todos los scroll
+        /// se puede usar un nombre genérico para todos
+        /// sin que haya que repetir código
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MismoMetodoParaTodosSroll_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             Color miColor = Color.FromRgb((byte)SR.Value, (byte)SG.Value, (byte)SB.Value);
