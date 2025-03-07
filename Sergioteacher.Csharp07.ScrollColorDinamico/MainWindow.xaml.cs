@@ -13,6 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/*
+El control Slider (scroll) al desplazarse varia sus valores
+de forma muy sensible, con una gran cantidad de decimales ...
+PERO ...
+los valores RGB son 3 enteros de 0 --> 255
+si capturas el valor del Slider hay que truncarlo ...
+PERO ...
+El Slider de WPF viene preparado para configurar los saltos de sus valores.
+TickPlacement="BottomRight"   --> lugar de la regla
+TickFrequency="5" --> el tamaño del salto, aquí de 5 en 5
+             ="1" --> en el código de 1 en 1
+IsSnapToTickEnabled="True"    --> los valores se pegan a la regla, en nuestro
+código forzará que sean enteros.
+*/
+
 namespace Sergioteacher.Csharp07.ScrollColorDinamico
 {
     /// <summary>
